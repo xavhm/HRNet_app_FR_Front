@@ -17,7 +17,14 @@ import styles from "./Subscription.module.scss";
 // Select Department (sales, marketing, engineering, human resources, legal)
 
 const Subscription: React.FC = () => {
-  return <section></section>;
+  return (
+    <section className={styles.subscription}>
+      <h2 className={styles.title}>Ajouter un employé</h2>
+      <h3 className={styles.subtitle}>Employé</h3>
+      <h3 className={styles.subtitle}>Addresse</h3>
+      <h3 className={styles.subtitle}>Département</h3>
+    </section>
+  );
 };
 
 export default Subscription;

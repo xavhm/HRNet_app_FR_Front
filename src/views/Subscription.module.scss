@@ -1,0 +1,54 @@
+.subscription {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  min-height: 50vh;
+  width: min(80vw, 1200px);
+  background-color: white;
+  background-clip: padding-box;
+  border: solid 5px transparent;
+  border-radius: 1rem;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -5px;
+    border-radius: inherit;
+    background: linear-gradient(190deg, #1d976c, #93f9b9);
+  }
+
+  .title {
+    position: absolute;
+    top: -18px;
+    left: 35px;
+    color: #1d976c;
+    background-color: white;
+    padding: 0 1.25rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+
+    @media screen and (max-width: 625px) {
+      top: -15px;
+    }
+  }
+
+  .subtitle {
+    color: #1d976c;
+    font-weight: normal;
+    margin-right: auto;
+    padding: 20px;
+    &:after {
+      content: " >";
+      color: inherit;
+    }
+  }
+
+  .subtitle:first-of-type {
+    margin-top: 50px;
+  }
+}
