@@ -1,0 +1,16 @@
+.error {
+  font-size: 48px;
+  color: white;
+  font-weight: bold;
+}
+
+.redirection {
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
