@@ -1,21 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface isEmployee {
-  id?: string;
-  email?: string;
-  firstName?: string;
-  lastName?: string;
+  firstName: string;
+  lastName: string;
+  DoB: any;
+  startDate: any;
+  address: string;
+  city: string;
+  region: string | undefined;
+  zip: number;
+  department: string;
 }
 
-const initialState: isEmployee = {
-  id: "",
-};
+const initialState: isEmployee[] = [];
 
 export const employeeSlice = createSlice({
   name: "employee",
   initialState,
-  reducers: {},
+  reducers: {
+    addEmployee: (state, newEmployee) => {
+      console.log("payload", newEmployee.payload);
+      return (state = [...state, newEmployee.payload]);
+    },
+    getEmployeesList: (state) => {
+      return state;
+    },
+  },
 });
 
-export const {} = employeeSlice.actions;
+export const { addEmployee, getEmployeesList } = employeeSlice.actions;
 export default employeeSlice.reducer;

@@ -1,10 +1,18 @@
 import React from "react";
-import styles from "./Subscription.module.scss";
+import dayjs from "dayjs";
+import "dayjs/locale/fr";
+import { useNavigate } from "react-router-dom";
 import { Button, DatePicker, Form, Input, InputNumber, Select, ConfigProvider } from "antd";
+import { useAppDispatch } from "../store/hooks";
+import { addEmployee, getEmployeesList } from "../store/employeeSlice";
+import styles from "./Subscription.module.scss";
 import locale from "antd/locale/fr_FR";
 
 const Subscription: React.FC = () => {
-  const province = [
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const province: string[] = [
     "Gironde",
     "Région Parisienne",
     "Charentes-Martimes",
@@ -13,7 +21,24 @@ const Subscription: React.FC = () => {
     "Côte d'Azur",
     "Corse",
   ];
-  const department = ["Ventes", "Marketing", "Engénieurie", "Ressources humaines", "Légal"];
+  const department: string[] = [
+    "Ventes",
+    "Marketing",
+    "Engénieurie",
+    "Ressources humaines",
+    "Légal",
+  ];
+
+  function navigateToError(): void {
+    navigate("/error");
+  }
+
+  function saveNewEmployee(values: any) {
+    const newDoB = values.DoB.format("DD-MM-YYYY");
+    const newStartDate = values.startDate.format("DD-MM-YYYY");
+    const newValues = { ...values, DoB: newDoB, startDate: newStartDate };
+    dispatch(addEmployee(newValues));
+  }
 
   return (
     <section className={styles.subscription}>
@@ -31,17 +56,15 @@ const Subscription: React.FC = () => {
           wrapperCol={{ span: 32 }}
           initialValues={{ remember: true }}
           onFinish={(values) => {
-            console.log(values);
+            saveNewEmployee(values);
           }}
-          onFinishFailed={() => {
-            console.log("error");
-          }}
+          onFinishFailed={navigateToError}
           autoComplete="off">
           <h3 className={styles.subtitle}>Employé</h3>
           <div className={styles.form_content}>
             <Form.Item
               label="Prénom"
-              name="prenom"
+              name="firstName"
               rules={[{ required: true, message: "Veuillez saisir le prénom!" }]}>
               <Input />
             </Form.Item>
@@ -50,7 +73,7 @@ const Subscription: React.FC = () => {
           <div className={styles.form_content}>
             <Form.Item
               label="Nom"
-              name="nom"
+              name="lastName"
               rules={[{ required: true, message: "Veuillez saisir le nom!" }]}>
               <Input />
             </Form.Item>
@@ -59,18 +82,18 @@ const Subscription: React.FC = () => {
           <div className={styles.form_content}>
             <Form.Item
               label="Date de naissance"
-              name="dob"
+              name="DoB"
               rules={[{ required: true, message: "Veuillez saisir la date de naissance!" }]}>
-              <DatePicker />
+              <DatePicker format={"DD-MM-YYYY"} />
             </Form.Item>
           </div>
 
           <div className={styles.form_content}>
             <Form.Item
               label="Date de début"
-              name="start"
+              name="startDate"
               rules={[{ required: true, message: "Veuillez la date de commencement!" }]}>
-              <DatePicker />
+              <DatePicker format={"DD-MM-YYYY"} />
             </Form.Item>
           </div>
 
@@ -98,7 +121,7 @@ const Subscription: React.FC = () => {
               <Select
                 options={province.map((it) => ({ label: it, value: it }))}
                 placeholder="Région"
-                size="large"
+                size="middle"
                 dropdownMatchSelectWidth={250}
               />
             </Form.Item>
