@@ -51,4 +51,20 @@
   .subtitle:first-of-type {
     margin-top: 50px;
   }
+
+  form {
+    width: 50%;
+  }
+
+  .form_content {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 3rem;
+  }
+
+  .form_button {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 3rem;
+  }
 }
