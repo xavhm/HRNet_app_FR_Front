@@ -1,10 +1,9 @@
 import React from "react";
-import dayjs from "dayjs";
 import "dayjs/locale/fr";
 import { useNavigate } from "react-router-dom";
 import { Button, DatePicker, Form, Input, InputNumber, Select, ConfigProvider } from "antd";
 import { useAppDispatch } from "../store/hooks";
-import { addEmployee, getEmployeesList } from "../store/employeeSlice";
+import { addEmployee } from "../store/employeeSlice";
 import styles from "./Subscription.module.scss";
 import locale from "antd/locale/fr_FR";
 
@@ -14,12 +13,13 @@ const Subscription: React.FC = () => {
 
   const province: string[] = [
     "Gironde",
-    "Région Parisienne",
+    "Île de France",
     "Charentes-Martimes",
     "Normandie",
     "Vendée",
     "Côte d'Azur",
     "Corse",
+    "Alpes-Maritimes",
   ];
   const department: string[] = [
     "Ventes",

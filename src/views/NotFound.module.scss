@@ -1,16 +1,22 @@
-.error {
-  font-size: 48px;
-  color: white;
-  font-weight: bold;
-}
+.error_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-.redirection {
-  font-size: 24px;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
+  .error {
+    font-size: 48px;
+    color: #1d976c;
+    font-weight: bold;
+  }
 
-  &:hover {
-    text-decoration: underline;
+  .redirection {
+    font-size: 24px;
+    color: #1d976c;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

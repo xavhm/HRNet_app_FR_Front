@@ -4,7 +4,7 @@ import styles from "./NotFound.module.scss";
 
 const NotFound: React.FC = () => {
   return (
-    <section className="error">
+    <section className={styles.error_wrapper}>
       <p className={styles.error}>Error 404 : Page introuvable!</p>
       <NavLink to="/" className={styles.redirection}>
         Retourner aux inscriptions
