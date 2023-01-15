@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { isEmployee } from "../entities/isEmployee";
+import { employees } from "../data/employees";
 
-const initialState: isEmployee[] = [];
+const initialState: isEmployee[] = [...employees];
 
 export const employeeSlice = createSlice({
   name: "employee",

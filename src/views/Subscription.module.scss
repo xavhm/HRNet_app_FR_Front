@@ -68,3 +68,18 @@
     margin-top: 3rem;
   }
 }
+
+.modal_success,
+.modal_failure {
+  .content {
+    font-size: 1.5rem;
+    padding: 2rem 0;
+  }
+
+  .modal_actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
