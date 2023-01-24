@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px solid #4ac29a;
+  border-radius: 8px;
+  min-width: 250px;
+  margin-left: 1.25rem;
+}
+
+.input::placeholder {
+  opacity: 0.6;
+}
+
+.input:focus-visible {
+  outline: 2px solid #4ac29a;
+}
+
+.label {
+  font-size: 1rem;
+}
+
+span {
+  font-weight: bold;
+  color: red;
+}
+
+.description,
+.error {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  margin-left: 1.25rem;
+}
+
+.error {
+  color: #cb263f;
+}

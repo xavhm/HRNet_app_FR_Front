@@ -1,0 +1,29 @@
+.button {
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primary {
+  border: 1px solid #4ac29a;
+  background-color: #4ac29a;
+
+  &:hover {
+    background-color: white;
+    color: #4ac29a;
+  }
+}
+
+.error {
+  border: 1px solid #cb263f;
+  background-color: #cb263f;
+
+  &:hover {
+    background-color: white;
+    color: #cb263f;
+  }
+}
