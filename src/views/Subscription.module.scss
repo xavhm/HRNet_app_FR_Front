@@ -33,6 +33,25 @@
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
+  .form {
+    width: 100%;
+    padding: 0 2rem;
+
+    .input_field {
+      margin-bottom: 1rem;
+    }
+
+    .input_field:last-of-type {
+      margin-bottom: 4rem;
+    }
+
+    .form_button {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
   .title {
     color: #4ac29a;
     font-weight: bold;

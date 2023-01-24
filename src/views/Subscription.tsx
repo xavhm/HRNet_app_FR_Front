@@ -85,7 +85,7 @@ const Subscription: React.FC = () => {
     <section className={styles.subscription}>
       <h2 className={styles.title}>Ajouter un employé</h2>
 
-      <form>
+      <form className={styles.form}>
         <div className={styles.input_field}>
           <InputText
             name="firstName"
@@ -99,7 +99,9 @@ const Subscription: React.FC = () => {
             error={inputErrors.firstName}
           />
         </div>
-        <Button variant="primary" label="Test" action={validateFields} />
+        <div className={styles.form_button}>
+          <Button variant="primary" label="Test" action={validateFields} />
+        </div>
       </form>
 
       {/* <ConfigProvider
