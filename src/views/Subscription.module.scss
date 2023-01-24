@@ -20,21 +20,26 @@
     z-index: -1;
     margin: -5px;
     border-radius: inherit;
-    background: linear-gradient(190deg, #1d976c, #93f9b9);
+    background: #4ac29a; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #bdfff3,
+      #4ac29a
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #bdfff3,
+      #4ac29a
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
   .title {
-    position: absolute;
-    top: -18px;
-    left: 35px;
-    color: #1d976c;
-    background-color: white;
-    padding: 0 1.25rem;
+    color: #4ac29a;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: auto;
+    padding: 2rem;
     font-size: clamp(1rem, 3vw, 1.5rem);
-
-    @media screen and (max-width: 625px) {
-      top: -15px;
-    }
   }
 
   .subtitle {

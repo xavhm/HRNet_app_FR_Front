@@ -19,6 +19,11 @@
     ul {
       display: flex;
       gap: 2rem;
+      margin-bottom: 0;
+
+      li {
+        list-style: none;
+      }
     }
 
     a {

@@ -24,17 +24,12 @@
   }
 
   .title {
-    position: absolute;
-    top: -18px;
-    left: 35px;
-    color: #1d976c;
-    background-color: white;
-    padding: 0 1.25rem;
+    color: #4ac29a;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: auto;
+    padding: 2rem;
     font-size: clamp(1rem, 3vw, 1.5rem);
-
-    @media screen and (max-width: 625px) {
-      top: -15px;
-    }
   }
 
   .table {

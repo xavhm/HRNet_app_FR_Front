@@ -19,8 +19,12 @@ const Layout: React.FC = () => {
             <img src={logo} alt="Health Wealth Logo" />
           </a>
           <ul>
-            <NavLink to="/">Inscription</NavLink>
-            <NavLink to="/list">Liste des employés</NavLink>
+            <li>
+              <NavLink to="/">Inscription</NavLink>
+            </li>
+            <li>
+              <NavLink to="/list">Liste des employés</NavLink>
+            </li>
           </ul>
         </div>
       </nav>
