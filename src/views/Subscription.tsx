@@ -65,10 +65,43 @@ const Subscription: React.FC = () => {
     setNewEmployee({ ...newEmployee, firstName: target.value });
   }
 
+  function setLastName(event: React.ChangeEvent): void {
+    const target = event.target as HTMLInputElement;
+    setNewEmployee({ ...newEmployee, lastName: target.value });
+  }
+
+  function setAddress(event: React.ChangeEvent): void {
+    const target = event.target as HTMLInputElement;
+    setNewEmployee({ ...newEmployee, address: target.value });
+  }
+
+  function setCity(event: React.ChangeEvent): void {
+    const target = event.target as HTMLInputElement;
+    setNewEmployee({ ...newEmployee, city: target.value });
+  }
+
   function validateFirstName(): void {
     newEmployee.firstName.length
       ? setInputErrors((prev) => ({ ...prev, firstName: false }))
       : setInputErrors((prev) => ({ ...prev, firstName: true }));
+  }
+
+  function validateLastName(): void {
+    newEmployee.lastName.length
+      ? setInputErrors((prev) => ({ ...prev, lastName: false }))
+      : setInputErrors((prev) => ({ ...prev, lastName: true }));
+  }
+
+  function validateAddress(): void {
+    newEmployee.address.length
+      ? setInputErrors((prev) => ({ ...prev, address: false }))
+      : setInputErrors((prev) => ({ ...prev, address: true }));
+  }
+
+  function validateCity(): void {
+    newEmployee.city.length
+      ? setInputErrors((prev) => ({ ...prev, city: false }))
+      : setInputErrors((prev) => ({ ...prev, city: true }));
   }
 
   return (
@@ -79,14 +112,53 @@ const Subscription: React.FC = () => {
         <div className={styles.input_field}>
           <InputText
             name="firstName"
-            label="Nom"
+            label="Prénom"
             placeholder="Tony"
             required={true}
             onChange={setFirstName}
             onBlur={validateFirstName}
-            errorMessage="Veuillez saisir un nom !"
+            errorMessage="Veuillez saisir un prénom !"
             description=""
             error={inputErrors.firstName}
+          />
+        </div>
+        <div className={styles.input_field}>
+          <InputText
+            name="lastName"
+            label="Nom"
+            placeholder="Stark"
+            required={true}
+            onChange={setLastName}
+            onBlur={validateLastName}
+            errorMessage="Veuillez saisir un nom !"
+            description=""
+            error={inputErrors.lastName}
+          />
+        </div>
+        <div className={styles.input_field}>
+          <InputText
+            name="address"
+            label="Adresse"
+            placeholder="45 Rue de ..."
+            required={true}
+            onChange={setAddress}
+            onBlur={validateAddress}
+            errorMessage="Veuillez saisir une adresse !"
+            description=""
+            error={inputErrors.address}
+          />
+        </div>
+        <div className={styles.input_field}>
+          <InputText
+            name="city"
+            label="Ville"
+            placeholder="Paris"
+            required={true}
+            onChange={setCity}
+            onBlur={validateCity}
+            errorMessage="Veuillez saisir une ville !"
+            description=""
+            error={inputErrors.city}
           />
         </div>
         <div className={styles.form_button}>
