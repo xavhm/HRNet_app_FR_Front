@@ -8,7 +8,7 @@ interface isInputTextProps {
   placeholder?: string;
   required: boolean;
   onChange: React.ChangeEventHandler;
-  onBlur: React.FocusEventHandler;
+  onBlur?: React.FocusEventHandler;
   error: boolean;
   errorMessage: string;
 }

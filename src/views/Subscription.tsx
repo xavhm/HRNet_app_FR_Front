@@ -51,8 +51,8 @@ const Subscription: React.FC = () => {
   function validateFields(event: React.FormEvent): void {
     event.preventDefault();
     const errors = Object.values(inputErrors);
-    const isValid = errors.every((bool) => bool === false);
-    if (!isValid) {
+    const hasNoError = errors.every((bool) => bool === false);
+    if (!hasNoError) {
       setIsFailureModalOpen(true);
       return;
     }
@@ -105,10 +105,12 @@ const Subscription: React.FC = () => {
   }
 
   return (
-    <section className={styles.subscription}>
-      <h2 className={styles.title}>Ajouter un employé</h2>
+    <section className={styles.subscription} aria-describedby="form_section">
+      <h2 id="form_section" className={styles.title}>
+        Ajouter un employé
+      </h2>
 
-      <form className={styles.form}>
+      <form className={styles.form} aria-label="Formulaire d'ajout d'un employé">
         <div className={styles.input_field}>
           <InputText
             name="firstName"

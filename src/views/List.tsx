@@ -64,8 +64,10 @@ const List: React.FC = () => {
   }
 
   return (
-    <section className={styles.list}>
-      <h2 className={styles.title}>Liste des employés</h2>
+    <section className={styles.list} aria-describedby="list_section">
+      <h2 id="list_section" className={styles.title}>
+        Liste des employés
+      </h2>
 
       <div className={styles.table}>
         <ConfigProvider
