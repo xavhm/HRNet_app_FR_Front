@@ -12,24 +12,8 @@
   margin-left: 1.25rem;
 }
 
-.input::placeholder {
-  opacity: 0.6;
-}
-
 .input:focus-visible {
   outline: 2px solid #4ac29a;
-}
-
-.error {
-  display: none;
-  font-size: 0.8rem;
-  margin-bottom: 0;
-  margin-left: 1.25rem;
-  color: #cb263f;
-}
-
-.input:invalid ~ .error {
-  display: block;
 }
 
 .label {

@@ -1,27 +1,21 @@
 import React, { useState } from "react";
-import styles from "./InputText.module.scss";
+import styles from "./InputNumber.module.scss";
 
-interface isInputTextProps {
+interface isInputNumberProps {
   name: string;
   label: string;
-  placeholder?: string;
   required: boolean;
   onChange: React.ChangeEventHandler;
-  errorMessage?: string;
   pattern?: string;
 }
 
-const InputText: React.FC<isInputTextProps> = ({
+const InputNumber: React.FC<isInputNumberProps> = ({
   name,
   label,
-  placeholder,
   required,
   pattern,
   onChange,
-  errorMessage,
 }) => {
-  const [focused, setFocused] = useState<boolean>(false);
-
   return (
     <div className={styles.wrapper}>
       <label className={styles.label} htmlFor={name}>
@@ -32,19 +26,12 @@ const InputText: React.FC<isInputTextProps> = ({
         className={styles.input}
         id={name}
         name={name}
-        type="text"
+        type="number"
         required={required}
         pattern={pattern}
-        placeholder={placeholder}
-        onChange={onChange}
-        onBlur={() => setFocused(true)}></input>
-      {focused && (
-        <p className={styles.error} role="alert" id="errorMessage">
-          {errorMessage}
-        </p>
-      )}
+        onChange={onChange}></input>
     </div>
   );
 };
 
-export default InputText;
+export default InputNumber;
