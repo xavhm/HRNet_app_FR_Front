@@ -35,6 +35,21 @@ const Subscription: React.FC = () => {
     navigate("/list");
   }
 
+  function resetInscription(): void {
+    setNewEmployee({
+      firstName: "",
+      lastName: "",
+      DoB: "",
+      startDate: "",
+      address: "",
+      city: "",
+      region: undefined,
+      zip: 0,
+      department: "",
+    });
+    setIsSuccessModalOpen(false);
+  }
+
   function validateFields(event: React.FormEvent): void {
     event.preventDefault();
     dispatch(addEmployee(newEmployee));
@@ -146,7 +161,7 @@ const Subscription: React.FC = () => {
           <div className={styles.content}>Votre nouvel employé a bien été enregistré !</div>
           <div className={styles.modal_actions}>
             <Button variant="primary" label="Voir la liste" action={navigateToEmployeesList} />
-            <Button variant="primary" label="OK" action={() => setIsSuccessModalOpen(false)} />
+            <Button variant="primary" label="OK" action={resetInscription} />
           </div>
         </section>
       </Modal>
